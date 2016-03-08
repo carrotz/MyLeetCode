@@ -7,7 +7,7 @@
 策略：可以被4整除的必败
 
 #代码
-``` 
+``` C++
    
 class Solution {
 public:
