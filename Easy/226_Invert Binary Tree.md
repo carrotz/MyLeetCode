@@ -1,0 +1,34 @@
+#题目
+翻转二叉树
+
+#分析
+递归
+
+#代码
+```C++
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    TreeNode* invertTree(TreeNode* root) {
+        TreeNode* tmp;
+        if(root == NULL)
+            return NULL;
+            
+        tmp = root->left;
+        root->left = root->right;
+        root->right = tmp;
+        
+        invertTree(root->left);
+        invertTree(root->right);
+        return root;
+    }
+};
+```
